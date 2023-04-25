@@ -3,6 +3,9 @@
 from flask import Flask, render_template
 from flask_babel import Babel
 
+def get_locale():
+    ''' get_locale '''
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 class Config():
     '''Config class for Babel'''
@@ -15,12 +18,6 @@ class Config():
 app = Flask(__name__)
 babel = Babel(app)
 app.config.from_object(Config)
-
-
-def get_locale():
-    ''' get_locale '''
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-
 
 @app.route("/")
 def index():
