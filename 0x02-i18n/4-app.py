@@ -18,12 +18,11 @@ class Config():
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = LANGUAGES[0]
     BABEL_DEFAULT_TIMEZONE = "UTC"
-    #BABEL_LOCALE_SELECTOR = get_locale
 
 
 app = Flask(__name__)
-babel = Babel(app)
 app.config.from_object(Config)
+babel = Babel(app)
 babel.init_app(app, locale_selector=get_locale)
 
 
