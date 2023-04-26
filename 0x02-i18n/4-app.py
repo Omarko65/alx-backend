@@ -18,7 +18,7 @@ class Config():
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = LANGUAGES[0]
     BABEL_DEFAULT_TIMEZONE = "UTC"
-    BABEL_LOCALE_SELECTOR = get_locale
+    #BABEL_LOCALE_SELECTOR = get_locale
 
 
 app = Flask(__name__)
